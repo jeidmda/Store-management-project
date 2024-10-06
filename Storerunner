@@ -1,0 +1,213 @@
+import java.util.Scanner;
+
+public class StoreRunner {
+  public static void main(String[] args) {
+
+    // Creates a Scanner object - feel free to delete if not using!
+    Scanner input = new Scanner(System.in);
+
+    /*
+    This is where all objets are instantiated
+    */
+    vehicle zutomayo = new vehicle("Hyundai", "Something", 24999.99, 2020, "F");
+    PickupTruck acane = new PickupTruck("Ford", "F150", 19999.99, 2009, "4", 5.5, true);
+    sedan rshitei = new sedan("Honda", "Civic", 19999.99, 2024, "R", true, true);
+    SUV ado = new SUV("Rivian", "R1S", 126999.99, 2024, "A", 8, true);
+          
+    System.out.println("---------------------------------------------");
+    System.out.println(zutomayo);
+    
+    System.out.println("---------------------------------------------");
+    System.out.println(acane);
+    
+    System.out.println("---------------------------------------------");    
+    System.out.println(ado);
+
+    System.out.println("---------------------------------------------");    
+    System.out.println(rshitei);
+    
+    System.out.println("---------------------------------------------");    
+    System.out.println("Would you like to buy a Truck(true/false)?");
+    
+    boolean wantTruck = input.nextBoolean();
+   
+    if (wantTruck == true) {
+      System.out.println("---------------------------------------------");
+      System.out.println("What would you like in your Truck?");
+
+      System.out.println("---------------------------------------------");
+      System.out.println("What year(number)?");
+      int year = input.nextInt();
+      
+      System.out.println("---------------------------------------------");
+      System.out.println("What brand(brand)?");
+      String brand = input.next();
+
+      System.out.println("---------------------------------------------");
+      System.out.println("What's the cars name(name)?");
+      String name = input.next();
+
+      System.out.println("---------------------------------------------");
+      System.out.println("What Drive train type(F, R, A, or 4)?");
+      String driveTrain = input.next();
+      
+      System.out.println("---------------------------------------------");
+      System.out.println("Do you want it to be dual cab(true/false)?");
+      boolean dualCab = input.nextBoolean();
+            
+      System.out.println("---------------------------------------------");
+      System.out.println("How long do you want your bed to be(decimal)?");
+      double bedSize = input.nextDouble();
+            
+      System.out.println("---------------------------------------------");
+      System.out.println("How much do you want it to cost(decimal)?");
+      double newPrice = input.nextDouble();
+            
+      acane.setPrice(newPrice);
+      acane.setDualCab(dualCab);
+      acane.setBedSize(bedSize);
+      acane.setYear(year);
+      acane.setBrand(brand);
+      acane.setName(name);
+      acane.setDriveTrain(driveTrain);
+      System.out.println("---------------------------------------------");
+      System.out.println("Your Pick up Truck's brand: " + acane.getBrand());
+      System.out.println("Your Pick up Truck's Name: " + acane.getName());
+      System.out.println("Your Pick up Truck's price: " + acane.getPrice());
+      double tax = newPrice + (newPrice/10);
+      System.out.println("Your price after tax: " + tax);
+      System.out.println("What year your Pick up Truck was made: " + acane.getYear());
+      System.out.println("Your Pick up Truck's Drive Train type: " + acane.getDriveTrain());
+      System.out.println("Is your Pick up Truck dual cab? " + acane.getDualCab());
+      System.out.println("Your Pick up Truck's bed size: " + acane.getBedSize());
+      System.out.println("---------------------------------------------");
+      System.out.println("Thank you for shopping at our car dealership!");
+      System.out.println("---------------------------------------------");
+
+    } else if (wantTruck == false) {
+      System.out.println("---------------------------------------------");
+      System.out.println("Would you like to buy an SUV(true/false)?");
+      boolean wantSUV = input.nextBoolean();
+
+      if (wantSUV == true) {
+        System.out.println("---------------------------------------------");
+        System.out.println("What would you like in your SUV?");
+
+        System.out.println("---------------------------------------------");
+        System.out.println("What year(number)?");
+        int SUVyear = input.nextInt();
+        
+        System.out.println("---------------------------------------------");
+        System.out.println("What brand(brand)?");
+        String SUVbrand = input.next();
+  
+        System.out.println("---------------------------------------------");
+        System.out.println("What's the cars name(name)?");
+        String SUVname = input.next();
+  
+        System.out.println("---------------------------------------------");
+        System.out.println("What Drive train type(F, R, A, or 4)?");
+        String SUVdriveTrain = input.next();
+        
+        System.out.println("---------------------------------------------");
+        System.out.println("Do you want a sun roof(true/false)?");
+        boolean hasSunRoof = input.nextBoolean();
+              
+        System.out.println("---------------------------------------------");
+        System.out.println("How many seats do you need/want(number)?");
+        int carSeats = input.nextInt();
+              
+        System.out.println("---------------------------------------------");
+        System.out.println("How much do you want it to cost(decimal)?");
+        double SUVnewPrice = input.nextDouble();
+              
+        ado.setPrice(SUVnewPrice);
+        ado.setHasSunRoof(hasSunRoof);
+        ado.setCarSeats(carSeats);
+        ado.setYear(SUVyear);
+        ado.setBrand(SUVbrand);
+        ado.setName(SUVname);
+        ado.setDriveTrain(SUVdriveTrain);
+        System.out.println("---------------------------------------------");
+        System.out.println("Your SUV's brand: " + ado.getBrand());
+        System.out.println("Your SUV's name: " + ado.getName());
+        System.out.println("Your SUV's price: " + ado.getPrice());
+        double SUVtax = SUVnewPrice + (SUVnewPrice/10);
+        System.out.println("Your price after tax: " + SUVtax);
+        System.out.println("What year your SUV was made: " + ado.getYear());
+        System.out.println("Your SUV's Drive Train type: " + ado.getDriveTrain());
+        System.out.println("Your SUV's car seat number: " + ado.getCarSeats());
+        System.out.println("Does your SUV have a sun roof? " + ado.getHasSunRoof());
+        System.out.println("---------------------------------------------");
+        System.out.println("Thank you for shopping at our car dealership!");
+        System.out.println("---------------------------------------------");
+        
+      } else if (wantSUV == false) {
+        System.out.println("---------------------------------------------");
+        System.out.println("Would you like to buy a sedan(true/false)?");
+        boolean wantSedan = input.nextBoolean();
+  
+        if (wantSedan == true) {
+          System.out.println("---------------------------------------------");
+          System.out.println("What would you like in your sedan?");
+  
+          System.out.println("---------------------------------------------");
+          System.out.println("What year(number)?");
+          int sedanyear = input.nextInt();
+          
+          System.out.println("---------------------------------------------");
+          System.out.println("What brand(brand)?");
+          String sedanbrand = input.next();
+    
+          System.out.println("---------------------------------------------");
+          System.out.println("What's the cars name(name)?");
+          String sedanname = input.next();
+    
+          System.out.println("---------------------------------------------");
+          System.out.println("What Drive train type(F, R, A, or 4)?");
+          String sedandriveTrain = input.next();
+          
+          System.out.println("---------------------------------------------");
+          System.out.println("Do you want your car to be a coupe(true/false)?");
+          boolean isCoupe = input.nextBoolean();
+                
+          System.out.println("---------------------------------------------");
+          System.out.println("Do you want your car to be a Sports car(true/false)?");
+          boolean isSport = input.nextBoolean();
+                
+          System.out.println("---------------------------------------------");
+          System.out.println("How much do you want it to cost(decimal)?");
+          double sedannewPrice = input.nextDouble();
+                
+          rshitei.setPrice(sedannewPrice);
+          rshitei.setIsCoupe(isCoupe);
+          rshitei.setIsSport(isSport);
+          rshitei.setYear(sedanyear);
+          rshitei.setBrand(sedanbrand);
+          rshitei.setName(sedanname);
+          rshitei.setDriveTrain(sedandriveTrain);
+          System.out.println("---------------------------------------------");
+          System.out.println("Your sedan's brand: " + rshitei.getBrand());
+          System.out.println("Your sedan's name: " + rshitei.getName());
+          System.out.println("Your sedan's price: " + rshitei.getPrice());
+          double sedantax = sedannewPrice + (sedannewPrice/10);
+          System.out.println("Your price after tax: " + sedantax);
+          System.out.println("What year your sedan was made: " + rshitei.getYear());
+          System.out.println("Your sedan's Drive Train type: " + rshitei.getDriveTrain());
+          System.out.println("Is your sedan sport? " + rshitei.getIsSport());
+          System.out.println("Is your sedan a coupe? " + rshitei.getIsCoupe());
+          System.out.println("---------------------------------------------");
+          System.out.println("Thank you for shopping at our car dealership!");
+          System.out.println("---------------------------------------------");
+          
+        } else if (wantSedan == false) {
+          System.out.println("---------------------------------------------");
+          System.out.println("Thank you for shopping at our car dealership!");
+          System.out.println("---------------------------------------------");
+        }
+      } 
+    }
+    // Closes the Scanner object
+    input.close();
+  }
+}

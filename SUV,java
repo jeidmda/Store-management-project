@@ -1,0 +1,55 @@
+/*
+ * Represents a cookie that can be sold at a food truck
+ * SUV is a type of vehicle
+ */
+public class SUV extends vehicle {
+
+  private int carSeats;   // What size the bed is
+  private boolean hasSunRoof;    // wether or not the truck is dual bed
+  /*
+   * Sets carSeats to true
+   */
+  public SUV() {
+    carSeats = 0;
+    hasSunRoof = false;
+  }
+
+  /*
+   * Sets the carBrand to the specified carBrand, the price to the
+   * specified price, and carSeats to the specified status
+   */
+  public SUV(String carBrand, String name, double price, int year, String driveTrain, int carSeats, boolean hasSunRoof) {
+    super(carBrand, name, price, year, driveTrain);
+    this.carSeats = carSeats;
+    this.hasSunRoof = hasSunRoof;
+  }
+
+  /*
+   * Returns the value assigned to carSeats
+   */
+  public int getCarSeats() {
+    return carSeats;
+  }
+
+  /*
+   * Sets carSeats to newcarSeats
+   */
+  public void setCarSeats(int carSeats) {
+    this.carSeats = carSeats;
+  }
+
+  public boolean getHasSunRoof() {
+    return hasSunRoof;
+  }
+
+  /*
+   * Sets hasSunRoof to newHasSunRoof
+   */
+  public void setHasSunRoof(boolean hasSunRoof) {
+    this.hasSunRoof = hasSunRoof;
+  }
+
+  public String toString() {
+    return("Brand: " + carBrand + "\nName: " + name + "\nDrive train type: " + driveTrain + "\nPrice: " + price + "\nYear: " + year + "\nCar Seat number: " + carSeats + "\nHas sun roof? " + hasSunRoof);
+  }
+}

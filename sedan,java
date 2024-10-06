@@ -1,0 +1,55 @@
+/*
+ * Represents a cookie that can be sold at a food truck
+ * sedan is a type of vehicle
+ */
+public class sedan extends vehicle {
+
+  private boolean IsSport;   // What size the bed is
+  private boolean isCoupe;    // wether or not the truck is dual bed
+  /*
+   * Sets IsSport to true
+   */
+  public sedan() {
+    IsSport = false;
+    isCoupe = false;
+  }
+
+  /*
+   * Sets the carBrand to the specified carBrand, the price to the
+   * specified price, and IsSport to the specified status
+   */
+  public sedan(String carBrand, String name, double price, int year, String driveTrain, boolean IsSport, boolean isCoupe) {
+    super(carBrand, name, price, year, driveTrain);
+    this.IsSport = IsSport;
+    this.isCoupe = isCoupe;
+  }
+
+  /*
+   * Returns the value assigned to IsSport
+   */
+  public boolean getIsSport() {
+    return IsSport;
+  }
+
+  /*
+   * Sets IsSport to newcarSeats
+   */
+  public void setIsSport(boolean IsSport) {
+    this.IsSport = IsSport;
+  }
+
+  public boolean getIsCoupe() {
+    return isCoupe;
+  }
+
+  /*
+   * Sets isCoupe to newIsCoupe
+   */
+  public void setIsCoupe(boolean isCoupe) {
+    this.isCoupe = isCoupe;
+  }
+
+  public String toString() {
+    return("Brand: " + carBrand + "\nName: " + name + "\nDrive train type: " + driveTrain + "\nPrice: " + price + "\nYear: " + year + "\nIs it sport? " + IsSport + "\nIs it a coupe? " + isCoupe);
+  }
+}
